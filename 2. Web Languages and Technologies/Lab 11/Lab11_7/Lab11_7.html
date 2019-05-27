@@ -1,0 +1,109 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+	<script>
+		var clicks=0;
+		var multi=10000;
+		var xrwma=0;
+		var check=1;
+		function myFunction()
+            {	
+				
+				document.getElementById("paragraph").innerHTML = "";
+				//document.getElementById("number").innerHTML = "You number is : " + number;
+                var table1 = document.getElementById("table1");
+                for(i = 0; i < table1.rows.length; i++)
+                {
+                    for(j = 0; j < table1.rows[i].cells.length; j++){
+                        var t = Math.round(Math.random() * 89)+10;
+                        table1.rows[i].cells[j].innerHTML = t;
+						table1.rows[i].cells[j].style.backgroundColor = "white";
+						
+						
+                        /*if(t > 5)
+                        {
+                            table1.rows[i].cells[j].style.backgroundColor = "green";
+                        }
+                        else
+                        {
+                            table1.rows[i].cells[j].style.backgroundColor = "red";
+                        }*/
+                    }
+                }
+				
+
+			}
+			
+			
+			function testfor(cell){
+				cell.style.backgroundColor = "red";
+				if (check==1){
+					clicks = clicks + 1;
+					xrwma = xrwma + multi*parseInt(cell.innerHTML);
+					multi=multi/100;
+					if (clicks == 3) {
+						check = 0;
+						document.getElementById("paragraph").innerHTML = xrwma;
+						document.getElementById("paragraph").style.color = "#"+xrwma;
+					
+					}
+				
+					
+				}
+				
+			}
+	</script>
+</head>
+
+<body>
+	
+	
+	<input id="start" type="button" value="Δημιουργία" onclick="myFunction()" >
+	<hr>
+	<table id="table1" border="1" height="100" width="100">
+            <tr>
+                <td onclick="testfor(this)" ></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+            </tr>
+            <tr>
+                <td onclick="testfor(this)" ></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+            </tr>
+            <tr>
+                <td onclick="testfor(this)" ></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+            </tr>
+            <tr>
+                <td onclick="testfor(this)" ></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+            </tr>
+            <tr>
+                <td onclick="testfor(this)" ></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+                <td onclick="testfor(this)"></td>
+            </tr>
+           
+        </table>
+		<p id="paragraph">
+		
+		</p>
+  
+  
+  
+</body>
+</html>
