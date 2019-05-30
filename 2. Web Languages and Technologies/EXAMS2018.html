@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script>
+			var counter=1;
+			var AML;
+			var OEL;
+			var SBL;
+			var ch=0;
+			var Ta1;
+			var Ta2;
+			var prevR;
+			var num=0;
+			function fillSB(){
+				if (ch==0){
+				var SB = document.getElementById("ETOS");
+				
+				AML = document.getElementById("AM").value.length;
+				OEL = document.getElementById("OE").value.length;
+				if (AML!=0){
+					if (OEL!=0){
+						ch=1;
+						SB.innerHTML='<option value="Έτος Σπουδών 1">Έτος Σπουδών 1</option><option value="Έτος Σπουδών 2">Έτος Σπουδών 2</option><option value="Έτος Σπουδών 3">Έτος Σπουδών 3</option><option value="Έτος Σπουδών 4">Έτος Σπουδών 4</option><option value="Έτος Σπουδών 5">Έτος Σπουδών 5</option>'
+					}
+				}
+				}
+			
+			}
+			
+			function testfor(cell){
+				var C = cell.innerHTML;
+				document.getElementById("list").innerHTML+='<li>'+C+'</li>'
+			
+			
+			}
+			
+			function changebg(row){
+				row.style.backgroundColor= "yellow";
+				if (num==1){
+					prevR.style.backgroundColor = "aqua";
+				}
+				num=1;
+				prevR=row;
+				
+			
+			}
+			
+			
+			function insert(){
+				var OEs = document.getElementById("OE").value;
+				var AMs = document.getElementById("AM").value;
+				AML = document.getElementById("AM").value.length;
+				OEL = document.getElementById("OE").value.length;
+				SBL = document.getElementById("ETOS").value;
+				var AITHOUSA = document.getElementById("class").value;
+				if (AML!=0){
+					if (OEL!=0){
+						if (SBL.length!=0){
+							Ta1=document.getElementById("T1");
+							Ta1.innerHTML +='<tr> <td ondblclick="testfor(this)">'+AMs+'</td><td ondblclick="testfor(this)">'+SBL+'</td></tr>';
+							Ta2=document.getElementById("T2");
+							Ta2.innerHTML +='<tr><td onmouseover="changebg(this)">'+counter+'</td><td onmouseover="changebg(this)">'+OEs+'</td><td onmouseover="changebg(this)">'+AITHOUSA+'</td></tr>';
+							counter++;
+							document.getElementById("OE").value="";
+							document.getElementById("AM").value="";
+							
+						}
+					}
+				}
+			}
+		</script>
+		<style type="text/css">
+			table.table1 {
+				position: absolute;
+				right: 35px;
+				top: 20px;
+				border-collapse: collapse;
+				font-family: "Arial";
+				border: 1px solid black;
+				text-align: center;
+				
+			}
+			table.table1 td, table.table1 th {
+				
+				border: 3px solid black;
+			}
+			ul.list1 {
+				position: absolute;
+				right: 35px;
+				top: 420px;
+				border-collapse: collapse;
+				font-family: "Arial";
+				
+				
+			}
+			
+			
+			
+			
+			table.table2 {
+				position: fixed;
+				right: 40%;
+				top: 40%;
+				border-collapse: collapse;
+				font-family: "Arial";
+				border: 1px solid black;
+				text-align: center;
+				
+			}
+			table.table2 th {
+				background-color: blue;
+				color: white;
+				border: 3px solid black;
+			}
+			table.table2 td {
+				background-color: aqua;
+				border: 3px solid black;
+			}	
+
+
+
+		</style>
+	
+	
+	</head>
+	<body>
+		<ul id="list" class="list1">
+			
+		</ul>
+		Αριθμός Μητρώου: <input type="text" id="AM"> Ονοματεπώνυμο: <input type="text" id="OE">
+
+		<select id="ETOS" onclick="fillSB()">
+			
+		</select>
+		 <select id="class">
+			<option value="ΑΜΦ">ΑΜΦ</option>
+			<option value="101">101</option>
+			<option value="102">102</option>
+			<option value="109">109</option>
+		</select>
+		
+		
+		<input type="button" value="ΚΑΤΑΧΩΡΗΣΗ" onclick="insert()">
+		
+		
+		<table class="table1" id="T1">
+			<tr>
+				<th>  AM  </th>
+				<th>  ΕΤΟΣ ΣΠΟΥΔΩΝ  </th>
+			</tr>
+			
+		</table>
+		
+		<table class="table2" id="T2">
+			<tr>
+				<th>  A/A  </th>
+				<th>  Ονοματεπώνυμο  </th>
+				<th> Αίθουσα </th>
+			</tr>
+			
+		</table>
+		
+	</body>
+</html>
