@@ -64,3 +64,409 @@
         <img id="img" src="a.jpg"/>
     </body>
 </html>
+
+<html>
+	<head>
+		<title> FRAME 2 </title>
+		<script>
+			var timer;
+            var timeout;
+			var num=0;
+			/*<table style="width:100%">
+							<tr style="background-color:white;"><td><center>NO1<center></td></tr>
+							<tr style="background-color:white;"><td><center>NO1<center></td></tr>
+							<tr style="background-color:white;"><td><center>NO1<center></td></tr>
+							<tr style="background-color:white;"><td><center>NO1<center></td></tr>
+						</table>*/
+			var imagessrc = "https://aetos.it.teithe.gr/~dtektoni/e/";
+
+			var products = new Array();
+
+			products[0] = ["Printer 1", imagessrc+ "printer1.JPG", 150,0];
+			products[1] = ["Printer 2", imagessrc+ "printer2.JPG", 160,0];
+			products[2] = ["Printer 3", imagessrc+ "printer3.JPG", 170,0];
+			products[3] = ["Hard Disk 1", imagessrc+ "HDD1.JPG", 50,1];
+			products[4] = ["Hard Disk 2", imagessrc+ "HDD2.JPG", 60,1];
+			products[5] = ["Hard Disk 3", imagessrc+ "HDD3.JPG", 70,1];
+			products[6] = ["Laptop 1", imagessrc+ "laptop1.JPG", 700,2];
+			products[7] = ["Laptop 2", imagessrc+ "laptop2.JPG", 800,2];
+			products[8] = ["Laptop 3", imagessrc+ "laptop3.JPG", 900,2];
+			products[9] = ["Monitor 1", imagessrc+ "monitor1.JPG", 200,3];
+			products[10] = ["Monitor 2", imagessrc+ "monitor2.JPG", 250,3];
+			products[11] = ["Monitor 3", imagessrc+ "monitor3.JPG", 300,3];
+
+
+			var categories = new Array();
+
+			categories[0]="Εκτυπωτές";
+			categories[1]="Σκληροί Δίσκοι";
+			categories[2]="Laptop";
+			categories[3]="Οθόνες";
+			
+			function myFunction1(){
+				var Cat = document.getElementById("categories");
+				//Cat.innerHTML = '<table style="width:100%"><tr style="background-color:white;"><td><center>Εκτυπωτές<center></td></tr><tr style="background-color:white;"><td><center>Σκληροί Δίσκοι<center></td></tr><tr style="background-color:white;"><td><center>Laptop<center></td></tr><tr style="background-color:white;"><td><center>Οθόνες<center></td></tr></table>'
+			
+			}
+			
+			function chosen(cell){
+				cell.style.backgroundColor="green";
+				if (num==1){
+					prevR.style.backgroundColor = "white";
+				}
+				num=1;
+				prevR=cell;
+				document.getElementById("selected").innerHTML='<table class="table1"><tr><th>Προιόν</th><th>Φωτογραφία</th><th>Τιμή</th><th>-----</th></tr><tr><td id="A_A"></td><td id="A_B"></td><td id="A_C"></td><td id="A_D"></td></tr><tr><td id="B_A"></td><td id="B_B"></td><td id="B_C"></td>	<td id="B_D"></td></tr><tr><td id="C_A"></td><td id="C_B"></td><td id="C_C"></td><td id="C_D"></td></tr></table>'
+				document.getElementById("A_A").innerHTML=products[0][0];
+				document.getElementById("A_B").innerHTML='<img width="50px" src='+products[0][2]+' alt="MPRINTER1">'
+				document.getElementById("A_C").innerHTML="150";
+				
+				document.getElementById("B_A").innerHTML=products[1][0];
+				document.getElementById("B_B").innerHTML='<img width="50px" src='+products[1][2]+' alt="MPRINTER2">'
+				document.getElementById("B_C").innerHTML="160";
+				document.getElementById("B_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add1()">'
+				document.getElementById("C_A").innerHTML=products[2][0];
+				document.getElementById("C_B").innerHTML='<img width="50px" src='+products[2][2]+' alt="MPRINTER3">'
+				document.getElementById("C_C").innerHTML="170";
+				document.getElementById("B_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add1()">'
+				document.getElementById("A_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add0()">'
+				document.getElementById("C_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add2()">'
+			}
+			function add0(){
+				timer = setInterval(ad1, 1000);
+				timeout = setTimeout(rem1, 3000);
+				
+				
+			}
+			
+			function ad1(){
+				document.getElementById("added").innerHTML=products[0][0]+'     '+'<img src='+products[0][2]+' alt="MPRINTER1">';
+			}
+			function rem1(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			
+			function add1(){
+				timer = setInterval(ad2, 1000);
+				timeout = setTimeout(rem2, 3000);
+				
+				
+			}
+			
+			function ad2(){
+				document.getElementById("added").innerHTML=products[1][0]+'     '+'<img src='+products[1][2]+' alt="MPRINTER1">';
+			}
+			function rem2(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			
+			function add2(){
+				timer = setInterval(ad3, 1000);
+				timeout = setTimeout(rem3, 3000);
+				
+				
+			}
+			
+			function ad3(){
+				document.getElementById("added").innerHTML=products[2][0]+'     '+'<img src='+products[2][2]+' alt="MPRINTER1">';
+			}
+			function rem3(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			
+			function add3(){
+				timer = setInterval(ad4, 1000);
+				timeout = setTimeout(rem4, 3000);
+				
+				
+			}
+			
+			function ad4(){
+				document.getElementById("added").innerHTML=products[3][0]+'     '+'<img src='+products[3][2]+' alt="MPRINTER1">';
+			}
+			function rem4(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			
+			function add4(){
+				timer = setInterval(ad5, 1000);
+				timeout = setTimeout(rem5, 3000);
+				
+				
+			}
+			
+			function ad5(){
+				document.getElementById("added").innerHTML=products[4][0]+'     '+'<img src='+products[4][2]+' alt="MPRINTER1">';
+			}
+			function rem5(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+				
+			}
+			
+			function add5(){
+				timer = setInterval(ad6, 1000);
+				timeout = setTimeout(rem6, 3000);
+				
+				
+			}
+			
+			function ad6(){
+				document.getElementById("added").innerHTML=products[5][0]+'     '+'<img src='+products[5][2]+' alt="MPRINTER1">';
+			}
+			function rem6(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			
+			function add6(){
+				timer = setInterval(ad7, 1000);
+				timeout = setTimeout(rem7, 3000);
+				
+				
+			}
+			
+			function ad7(){
+				document.getElementById("added").innerHTML=products[6][0]+'     '+'<img src='+products[6][2]+' alt="MPRINTER1">';
+			}
+			function rem7(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			
+			function add7(){
+				timer = setInterval(ad8, 1000);
+				timeout = setTimeout(rem8, 3000);
+				
+				
+			}
+			
+			function ad8(){
+				document.getElementById("added").innerHTML=products[7][0]+'     '+'<img src='+products[7][2]+' alt="MPRINTER1">';
+			}
+			function re8(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			function add8(){
+				timer = setInterval(ad9, 1000);
+				timeout = setTimeout(rem9, 3000);
+				
+				
+			}
+			
+			function ad8(){
+				document.getElementById("added").innerHTML=products[8][0]+'     '+'<img src='+products[8][2]+' alt="MPRINTER1">';
+			}
+			function rem9(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			function add9(){
+				timer = setInterval(ad10, 1000);
+				timeout = setTimeout(rem10, 3000);
+				
+				
+			}
+			
+			function ad10(){
+				document.getElementById("added").innerHTML=products[9][0]+'     '+'<img src='+products[9][2]+' alt="MPRINTER1">';
+			}
+			function rem10(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			
+			function add10(){
+				timer = setInterval(ad11, 1000);
+				timeout = setTimeout(rem11, 3000);
+				
+				
+			}
+			
+			function ad11(){
+				document.getElementById("added").innerHTML=products[10][0]+'     '+'<img src='+products[10][2]+' alt="MPRINTER1">';
+			}
+			function rem11(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			function add11(){
+				timer = setInterval(ad12, 1000);
+				timeout = setTimeout(rem12, 3000);
+				
+				
+			}
+			
+			function ad12(){
+				document.getElementById("added").innerHTML=products[11][0]+'     '+'<img src='+products[11][2]+' alt="MPRINTER1">';
+			}
+			function rem12(){
+				document.getElementById("added").innerHTML='';
+				clearInterval(timer);
+                clearTimeout(timeout);
+			}
+			
+			function chosen1(cell){
+				cell.style.backgroundColor="green";
+				if (num==1){
+					prevR.style.backgroundColor = "white";
+				}
+								document.getElementById("selected").innerHTML='<table class="table1"><tr><th>Προιόν</th><th>Φωτογραφία</th><th>Τιμή</th><th>-----</th></tr><tr><td id="A_A"></td><td id="A_B"></td><td id="A_C"></td><td id="A_D"></td></tr><tr><td id="B_A"></td><td id="B_B"></td><td id="B_C"></td>	<td id="B_D"></td></tr><tr><td id="C_A"></td><td id="C_B"></td><td id="C_C"></td><td id="C_D"></td></tr></table>'
+
+				num=1;
+				prevR=cell;
+				document.getElementById("A_A").innerHTML=products[3][0];
+				document.getElementById("A_B").innerHTML='<img width="50px" src='+products[3][2]+' alt="HDD1">'
+				document.getElementById("A_C").innerHTML="50";
+				document.getElementById("B_A").innerHTML=products[4][0];
+				document.getElementById("B_B").innerHTML='<img width="50px" src='+products[4][2]+' alt="HDD2">'
+				document.getElementById("B_C").innerHTML="60";
+				document.getElementById("C_A").innerHTML=products[5][0];
+				document.getElementById("C_B").innerHTML='<img width="50px" src='+products[5][2]+' alt="HDD3">'
+				document.getElementById("C_C").innerHTML="70";
+				document.getElementById("B_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add4()">'
+				document.getElementById("A_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add3()">'
+				document.getElementById("C_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add5()">'
+			}
+			
+			function chosen2(cell){
+				cell.style.backgroundColor="green";
+				if (num==1){
+					prevR.style.backgroundColor = "white";
+				}
+								document.getElementById("selected").innerHTML='<table class="table1"><tr><th>Προιόν</th><th>Φωτογραφία</th><th>Τιμή</th><th>-----</th></tr><tr><td id="A_A"></td><td id="A_B"></td><td id="A_C"></td><td id="A_D"></td></tr><tr><td id="B_A"></td><td id="B_B"></td><td id="B_C"></td>	<td id="B_D"></td></tr><tr><td id="C_A"></td><td id="C_B"></td><td id="C_C"></td><td id="C_D"></td></tr></table>'
+
+				num=1;
+				prevR=cell;
+				document.getElementById("A_A").innerHTML=products[6][0];
+				document.getElementById("A_B").innerHTML='<img width="50px" src='+products[6][2]+' alt="LAPTOP1">'
+				document.getElementById("A_C").innerHTML="700";
+				document.getElementById("B_A").innerHTML=products[7][0];
+				document.getElementById("B_B").innerHTML='<img width="50px" src='+products[7][2]+' alt="LAPTOP2">'
+				document.getElementById("B_C").innerHTML="800";
+				document.getElementById("C_A").innerHTML=products[8][0];
+				document.getElementById("C_B").innerHTML='<img width="50px" src='+products[8][2]+' alt="LAPTOP3">'
+				document.getElementById("C_C").innerHTML="900";
+				document.getElementById("B_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add7()">'
+				document.getElementById("A_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add6()">'
+				document.getElementById("C_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add8()">'
+				
+			}
+			
+			function chosen3(cell){
+				cell.style.backgroundColor="green";
+				if (num==1){
+					prevR.style.backgroundColor = "white";
+				}
+								document.getElementById("selected").innerHTML='<table class="table1"><tr><th>Προιόν</th><th>Φωτογραφία</th><th>Τιμή</th><th>-----</th></tr><tr><td id="A_A"></td><td id="A_B"></td><td id="A_C"></td><td id="A_D"></td></tr><tr><td id="B_A"></td><td id="B_B"></td><td id="B_C"></td>	<td id="B_D"></td></tr><tr><td id="C_A"></td><td id="C_B"></td><td id="C_C"></td><td id="C_D"></td></tr></table>'
+
+				num=1;
+				prevR=cell;
+				document.getElementById("A_A").innerHTML=products[9][0];
+				document.getElementById("A_B").innerHTML='<img width="50px" src='+products[9][2]+' alt="MONIT1">'
+				document.getElementById("A_C").innerHTML="200";
+				document.getElementById("B_A").innerHTML=products[10][0];
+				document.getElementById("B_B").innerHTML='<img width="50px" src='+products[10][2]+' alt="MONIT2">'
+				document.getElementById("B_C").innerHTML="250";
+				document.getElementById("C_A").innerHTML=products[1][0];
+				document.getElementById("C_B").innerHTML='<img width="50px" src='+products[1][2]+' alt="MONIT3">'
+				document.getElementById("C_C").innerHTML="300";
+				document.getElementById("B_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add10()">'
+				document.getElementById("A_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add9()">'
+				document.getElementById("C_D").innerHTML='<input type="button" value="ΠΡΟΣΘΗΚΗ" onclick="add11()">'
+			}
+			
+			function showBasket(){
+				
+			
+			}
+		</script>
+		<style>
+			.center {
+			margin: auto;
+			width: 60%;
+			padding: 10px;
+			border: 1px solid black;
+		}
+			.center2 {
+			margin: auto;
+			width: 60%;
+			border: 3px solid #000000;
+			padding: 10px;
+		}
+		
+		table.table1 {
+				border-collapse: collapse;
+				font-family: "Arial";
+				border: 1px solid black;
+				
+		}
+		table.table1 td, table.table1 th {
+				
+				border: 3px solid black;
+		}
+		
+		div.ex1 {
+			position: relative;
+			top: -75px;
+			right: -1100px;
+		}	
+		
+		</style>
+	</head>
+	<body onload="myFunction1()">
+		<table width="100%" height="100%">
+			<tr>
+				<td colspan="2" height="25%" style="background-color:#e4e5e0">
+					<div id="basket" class="ex1">
+						<label>ΤΟ ΚΑΛΑΘΙ ΜΟΥ</label>
+						<br>
+						<table id="basketShow">
+							<tr>
+								
+							</tr>
+						</table>
+					</div>
+				</td>
+				
+			</tr>
+			<tr>
+				<td width="30%" height="75%" style="background-color:#e8f2c1">
+					<div id="categories" class="center" onmouseover="showBasket()">
+						<table style="width:100%">
+							<tr onclick="chosen(this)" style="background-color:white;"><td><center>Εκτυπωτές<center></td></tr>
+							<tr onclick="chosen1(this)" style="background-color:white;"><td><center>Σκληροί Δίσκοι<center></td></tr>
+							<tr onclick="chosen2(this)" style="background-color:white;"><td><center>Laptops<center></td></tr>
+							<tr onclick="chosen3(this)" style="background-color:white;"><td><center>Οθόνες<center></td></tr>
+						</table>
+					</div>
+				</td>
+				<td width="70%" height="75%" style="background-color:#cb9bf2">
+					<div id="selected">
+						
+					</div>
+					
+					<div id="added">
+					
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+<html>
